@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.card {
+  display: flex;
+  max-width: 42rem;
+  margin: 1.5rem auto;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: visible;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+  flex: 1;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain auto;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.card-content {
+  flex: 2;
+  padding: 1rem;
+  overflow: visible;
+}
+
+.card-content h1 {
+  font-size: 1.5rem;
+  color: hsl(217, 19%, 35%);
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: hsl(214, 17%, 51%);
+  margin-bottom: 20px;
+}
+
+.author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author-info-image {
+  display: flex;
+}
+
+.author-info p {
+  margin-bottom: 0;
+}
+
+.author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.author img.share-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  border-radius: 100%;
+  background-color: hsl(210, 46%, 95%);
+  padding: 0.5rem;
+}
+
+.author img.share-icon.active {
+  background-color: hsl(217, 19%, 35%);
+}
+
+.author img.share-icon.active img {
+  fill: #fff;
+}
+
+.author-info p {
+  font-weight: bold;
+  color: #333;
+}
+
+.author-info span {
+  font-size: 0.9rem;
+  color: hsl(212, 23%, 69%);
+}
+
+.share-container {
+  position: relative;
+}
+
+.share-popup {
+  display: none;
+  position: absolute;
+  bottom: 3rem;
+  right: -4rem;
+  background-color: #4b5862;
+  color: white;
+  padding: 0 1rem;
+  border-radius: 1rem;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.share-popup::after {
+  content: "";
+  position: absolute;
+  top: 58px; /* Positions the triangle just above the popup */
+  right: 72px; /* Align this to the center of your popup */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #4b5862; /* Same color as the popup background */
+}
+
+.share-popup img {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0;
+}
+
+.share-popup p {
+  margin-top: 1rem;
+}
+
+.show {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    margin: 1rem;
+  }
+
+  .card-image,
+  .card-content {
+    width: 100%;
+  }
+}
